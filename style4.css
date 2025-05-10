@@ -1,0 +1,142 @@
+
+::-webkit-scrollbar {
+  display: none;
+}
+/* Estilos para la sección de slides horizontal */
+.slider-transition-spacer {
+  opacity: 0.5;
+  background: linear-gradient(to bottom, transparent, rgba(0, 255, 255, 0.2));
+}
+.slides-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: aqua;
+}
+/* Contenedor de slides */
+.slide {
+  flex: 1 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.slide__outer,
+.slide__inner,
+.slide__content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+  padding: 5rem;
+}
+.container-2{
+  display: flex;
+  
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+}
+
+.slide__heading {
+  font-size: clamp(2rem, 5vw + 1rem, 7rem); color: white; margin-bottom: 30px;
+  font-weight: 700;
+  margin: 0;
+  will-change: transform, opacity;
+}
+
+.slide__img-cont {
+  width: 60%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  will-change: transform, opacity;
+}
+
+.slide__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Estilos para el overlay */
+.overlay {
+  position: relative;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+    opacity: 0;
+}
+
+.overlay__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay__count {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.overlay__img-cont {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  margin: 0;
+}
+
+.overlay__img-cont .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* Estilos para manejar la transición del slider */
+.slides-section {
+  transition: opacity 0.5s ease;
+}
+
+.slides-initializing {
+  will-change: transform, opacity;
+}
+
+.slides-active {
+  z-index: 10;
+}
+
+/* Asegura que los slides tengan una transición suave */
+.slide {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: transform, opacity;
+}

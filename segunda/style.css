@@ -1,0 +1,174 @@
+html,
+body {
+  min-height: 100vh;
+  background-color: #111;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.content {
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  padding: 3vw;
+  padding-top: 9vh;
+  font-size: calc( 28px + 96 * (100vw - 300px) / 1200 );
+}
+.content span {
+  --h: 0;
+  --s: 100%;
+  --l: 80%;
+  --color-light: hsl(var(--h), var(--s), var(--l));
+  --color-dark: hsl(calc(var(--h) + 30), var(--s), var(--l));
+  position: relative;
+  color: var(--color-light);
+  display: inline;
+  background: linear-gradient(to right, var(--color-light), var(--color-dark)), no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+}
+.content span:nth-child(1) {
+  --h: 165;
+}
+.content span:nth-child(2) {
+  --h: 170;
+}
+.content span:nth-child(3) {
+  --h: 175;
+}
+.content span:nth-child(4) {
+  --h: 180;
+}
+.content span:nth-child(5) {
+  --h: 185;
+}
+.content span:nth-child(6) {
+  --h: 190;
+}
+.content span:nth-child(7) {
+  --h: 195;
+}
+.content span:nth-child(8) {
+  --h: 200;
+}
+.content span:nth-child(9) {
+  --h: 205;
+}
+.content span:nth-child(10) {
+  --h: 210;
+}
+.content span:nth-child(11) {
+  --h: 215;
+}
+.content span:nth-child(12) {
+  --h: 220;
+}
+.content span:nth-child(13) {
+  --h: 225;
+}
+.content span:nth-child(14) {
+  --h: 230;
+}
+.content span:nth-child(15) {
+  --h: 235;
+}
+.content span:nth-child(16) {
+  --h: 240;
+}
+.content span:nth-child(17) {
+  --h: 245;
+}
+.content span:nth-child(18) {
+  --h: 250;
+}
+.content span:nth-child(19) {
+  --h: 255;
+}
+.content span:nth-child(20) {
+  --h: 260;
+}
+.content span:nth-child(21) {
+  --h: 265;
+}
+.content span:nth-child(22) {
+  --h: 270;
+}
+.content span:nth-child(23) {
+  --h: 275;
+}
+.content span:nth-child(24) {
+  --h: 280;
+}
+.content span:nth-child(25) {
+  --h: 285;
+}
+.content span:nth-child(26) {
+  --h: 290;
+}
+.content span:nth-child(27) {
+  --h: 295;
+}
+.content span:nth-child(28) {
+  --h: 300;
+}
+.content span:nth-child(29) {
+  --h: 305;
+}
+.content span:nth-child(30) {
+  --h: 310;
+}
+
+.logo {
+  display: block;
+  padding-bottom: 7rem;
+  margin-top: 20vh;
+}
+
+[data-app-container] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 1s;
+  opacity: 0;
+}
+[data-app-container].is-ready {
+  opacity: 1;
+}
+[data-app-container] > canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+[data-app-container] > canvas:focus {
+  outline: none;
+}
+[data-app-container]:before, [data-app-container]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 15vh;
+}
+[data-app-container]:before {
+  top: 0;
+  background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+}
+[data-app-container]:after {
+  background: linear-gradient(to top, black, rgba(0, 0, 0, 0));
+  bottom: 0;
+}

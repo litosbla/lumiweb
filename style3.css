@@ -1,0 +1,220 @@
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: termina, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 8vw;
+  text-align: center;
+  width: 100%;
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  z-index: 10;
+}
+.texto-animado {
+  position: relative;
+  display: block;
+  margin-bottom: 0; /* Quitado margen inferior para usar gap del grid */
+  will-change: transform;
+  padding: 1.5rem; /* Añadido padding para mejor legibilidad */
+  border-radius: 8px; /* Opcional: bordes redondeados */
+  transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  width: 100%; /* Asegura que ocupa todo el ancho de su área */
+  overflow: hidden;
+}
+
+/* Estilos para párrafos */
+.t-animado-parrafo {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 200;
+  line-height: 1.5;
+  letter-spacing: normal;
+  margin: 0;
+}
+
+/* Estilos para títulos */
+.t-animado-titulo {
+
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 700; /* Más bold para destacar */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom:20px ;
+}
+/* Efecto de aparición gradual al entrar en viewport */
+.texto-animado.is-inview {
+  opacity: 1;
+}
+
+.texto-animado:not(.is-inview) {
+  opacity: 0;
+  transform: translateY(30px); /* Posición inicial fuera de vista */
+}
+
+
+
+/* Estilo para destacar palabras específicas */
+.texto-animado .destacado {
+  color: #0088ff; /* O el color principal de tu sitio */
+  font-weight: 700;
+}
+
+/* Efecto de hover */
+.texto-animado:hover {
+  color: #0088ff; /* O el color principal de tu sitio */
+  transform: translateY(-5px);
+}
+/* Asegúrate de que la sección tenga suficiente altura */
+
+
+/* Añade esto para el espaciador de scroll */
+.scroll-spacer {
+  width: 100%;
+  background: transparent;
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  z-index: 2;
+}
+
+.filter-text {
+  mix-blend-mode: screen;
+  color: #804691;
+  z-index: 2;
+}
+.secondary-section-text {
+  padding-top: 20vh;
+  position: relative;
+  width: 50%; /* Mantenido en 50% como solicitaste */
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 150vh;
+  height: inherit;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Reducido a 12 columnas para mejor control */
+  grid-template-rows: repeat(36, minmax(min-content, auto)); /* Más filas para separar contenido */
+  z-index: 1;
+  padding-right: 5%; /* Quitamos el padding-left que desplazaba todo */
+}
+
+.secondary-section-image {
+  padding-top: 20vh;
+  position: relative;
+  width: 50%;
+  max-width: 1200px;
+  
+  margin: 0 auto;
+  min-height: 250vh;
+  height: inherit;
+  display: grid;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(30, 3%);
+  justify-content: center; /* Changed from center to center */
+  justify-items: center; /* Changed from center to start */
+  align-items: center;
+  z-index: 1;
+  object-fit: cover;
+
+}
+/* Variaciones por orden de aparición */
+.texto-animado:nth-child(1) {
+  grid-area: 2 / 1 / 2 / 13; /* Título a todo el ancho */
+  transition-delay: 0.1s;
+}
+
+
+/* Segundo bloque - Funcionalidad */
+.texto-animado:nth-child(2) {
+  grid-area: 12 / 1 / 15 / 13; /* Título separado del bloque anterior */
+  transition-delay: 0.2s;
+}
+
+
+/* Tercer bloque - Seguridad */
+.texto-animado:nth-child(3) {
+  grid-area: 23 / 1 / 26 / 13; /* Título separado del bloque anterior */
+  transition-delay: 0.3s;
+}
+
+
+
+@media (max-width: 768px) {
+  .secondary-section-text {
+    width: 85%; /* Un poco más ancho en móviles para mejor legibilidad */
+    grid-template-rows: repeat(42, minmax(min-content, auto)); /* Más filas para contenido */
+    gap: 15px; /* Gap más pequeño en móviles */
+  }
+  
+  /* Ajuste vertical para evitar solapamientos */
+  .texto-animado:nth-child(1) { grid-row: 1 / 5; }
+
+  .texto-animado:nth-child(2) { grid-row: 14 / 18; }
+
+  .texto-animado:nth-child(3) { grid-row: 27 / 31; }
+  
+  .t-animado-titulo {
+    font-size: clamp(1.3rem, 5vw, 2rem); /* Ajuste para móviles */
+  }
+  
+  .t-animado-parrafo {
+    font-size: clamp(0.9rem, 4vw, 1.2rem); /* Ajuste para móviles */
+  }
+}
+.grid-image {
+  width: 100%;
+  height:100%;
+  object-fit: contain;
+}
+
+/*  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(30, 3%);
+  
+  row column / row column 
+  */
+  
+/* Adjust grid areas to shift left while maintaining relative positions */
+
+.grid-image:nth-child(1) {
+  grid-area: 1/1/7/15; /* No change - already at far left */
+}
+
+.grid-image:nth-child(2) {
+  grid-area: 5/3/10/22; /* Moved left from 12/20 to 8/16 */
+}
+
+.grid-image:nth-child(3) {
+  grid-area: 11/5/18/18; /* Moved left from 5/15 to 3/13 */
+}
+
+.grid-image:nth-child(4) {
+  grid-area: 13/1/16/9; /* No change - already at far left */
+}
+
+.grid-image:nth-child(5) {
+  grid-area: 14/11/19/20; /* Moved left from 12/19 to 9/16 */
+}
+
+.grid-image:nth-child(6) {
+  grid-area: 22/3/25/13; /* Moved slightly left from 2/9 to 1/8 */
+}
+
+.grid-image:nth-child(7) {
+  grid-area: 22/9/29/20; /* Moved left from 11/20 to 9/18 */
+}
+
+.grid-image:nth-child(8) {
+  grid-area: 26/2/30/12; /* Moved left from 5/15 to 2/12 */
+}
+.content__slide-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+

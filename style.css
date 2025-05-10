@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap');
+
+#smooth-wrapper {
+  font-family: 'Unbounded', sans-serif;
+  
+}
+
+.pin-spacer {
+  pointer-events: none;
+}
+
+:root {
+  --f-5-min: 30;
+	--f-5-max: 120;
+	--step-5: calc(
+		((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) *
+			var(--fluid-bp));
+}
+
+header {
+  padding: 1.5rem;
+  display: flex;
+  border-bottom: 2px solid grey;
+  background-color: var(--dark);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--purple);
+  background-image: none;
+}
+
+.hero {
+  min-height: 100vh;
+}
+
+.logo {
+  gap: 1rem;
+  padding: 0.3rem;
+  color: white;
+  /* background-color: aqua; */
+
+}
+.logo img{
+  background-color: blue;
+  width: 50px;
+
+}
+nav {
+  margin-left: auto;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li + li {
+  padding-left: 1rem;
+}
+
+a {
+  color: white;
+}
+
+.h1 {
+  position: relative;
+  font-size: var(--step-5);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: stretch;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.img {
+  max-width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+.spacer {
+  height: 100vh
+}
+
+.clamp {
+  position: relative;
+  z-index: -1
+}
+.yt {
+  z-index: 3
+}
+
+.clamp svg {
+  position: absolute;
+  width: 112%;
+  top: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(2deg);
+  left: -6%;
+}
+
+.heading {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode:soft-light;
+  
+   perspective:1000px;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+transform: rotate(0.1deg);
+}
+.images {
+  z-index: -1;
+}
+
+.logo svg {
+  opacity: 0
+}
+
+
+.image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+/* Estilos para el texto de las imágenes */
+.image-text {
+  z-index: 20;
+  bottom: 60%;
+  position: absolute;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+/* Animación al hacer hover en el contenedor */
+.image-container:hover .image-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Asegurarse de que las imágenes mantienen su estilo original */
+.image-container img {
+  max-width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Efecto opcional: Ligero zoom en la imagen al hacer hover */
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Ajuste responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .images {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .image-container img {
+    height: 40vh;
+  }
+  
+  .image-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .images {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.text-with-shadow {
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  mix-blend-mode: difference;
+}
+.semi-transparent {
+  opacity: 0.95;
+
+}
+.first-word { mix-blend-mode:screen; }
+.second-word { mix-blend-mode: exclusion; }
+.third-word { 
+  opacity: 0.9;
+  mix-blend-mode: color-dodge; 
+
+}
+
+/* aca va lo segundo */

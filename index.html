@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ScrollSmoother/ScrollTrigger - Clamp</title>
+  <link rel='stylesheet' href='./styletipo.css'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style3.css">
+  <link rel="stylesheet" href="./style4.css">
+  <link rel="stylesheet" href="./style5.css">
+
+  
+</head>
+<body>
+  
+<!-- partial:index.partial.html -->
+<div id="smooth-wrapper" >
+  <div id="smooth-content">
+    <header>
+      <div class="logo" style="display: flex;align-items: center;">
+            <img data-speed="clamp(2.2)" src='./recursos/logo.png' width='200px' alt='logo'>
+            <p class="color:white">lumiweb</p>
+
+        <!-- <svg viewBox="0 0 370 100.34">
+          <g xmlns="http://www.w3.org/2000/svg" fill="#111" transform="matrix(.34923 0 0 .34923 -2.282 -2.195)">
+            <defs>
+              <path id="a" d="M7 6.5h286v287.1H7z" />
+            </defs>
+            <clipPath id="b">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#a" overflow="visible" />
+            </clipPath>
+            <g style="clip-path:url(#b)">
+              <path d="M150 198.8c26.1 0 47.2 21.2 47.2 47.4s-21.1 47.4-47.2 47.4-47.2-21.2-47.2-47.4 21.1-47.4 47.2-47.4zM198.7 152.9c-.1-1.1-.1-2.2-.1-3.3.1-12.4-4.5-24.4-13.3-33.2l-2-2c-8.7-8.7-20.5-13.4-32.8-13.3h-1.4c-12.3-.2-24.1 4.6-32.8 13.3l-2 2c-8.8 8.8-13.3 20.8-13.3 33.2 0 1.1 0 2.2-.1 3.3-1.3 23.3-19.8 42.4-43.1 44.3-29.3 2.5-53.5-21.9-51.1-51.3 1.9-23.3 21-41.8 44.1-43.2 1-.1 2.2-.1 3.2-.1 12.4.1 24.3-4.5 33.1-13.3l2-2c8.8-8.8 13.3-20.8 13.3-33.2 0-1.6.1-3.3.2-4.9 2.1-22.9 20.8-41.1 43.7-42.8C174 4.5 197 26.4 197 53.6v.7c-.2 12.3 4.6 24.2 13.3 32.9l2 2c8.8 8.8 20.7 13.4 33.1 13.3 1 0 2.1 0 3.2.1 23.3 1.3 42.2 19.9 44.1 43.2 2.5 29.4-21.8 53.7-51.1 51.3-23.1-1.8-41.5-21-42.9-44.2z" />
+            </g>
+          </g>
+          <path fill="#111" d="m154.366 61.651 6.506 5.865c-4.307 4.766-10.447 6.873-17.32 6.873C130.539 74.39 120 64.4 120 50.93s10.539-23.552 23.552-23.552c6.873 0 13.013 2.108 17.32 6.873l-6.506 5.865c-2.658-3.574-6.507-4.949-10.814-4.949-7.79 0-14.113 6.507-14.113 15.763 0 9.164 6.323 15.762 14.113 15.762 4.307 0 8.156-1.374 10.814-5.04zM180.484 3v70.473h-9.53V3h9.53zm33.083 24.285c13.013 0 18.237 7.881 18.237 14.571v31.617h-9.44v-4.949c-3.299 4.49-9.164 5.774-12.83 5.774-10.355 0-17.137-6.049-17.137-14.113 0-11.272 8.431-15.304 17.137-15.304h12.83v-3.025c0-2.84-1.1-6.781-8.797-6.781-4.307 0-8.248 2.29-10.814 5.865l-6.507-5.865c4.308-4.766 10.448-7.79 17.32-7.79zm8.797 32.075v-6.782h-11.547c-5.59 0-9.53 2.841-8.889 7.973.55 4.308 4.032 6.049 8.89 6.049 8.705 0 11.546-4.124 11.546-7.24zm61.492-12.005v26.118h-9.53l.091-.367V48.271c0-9.164-2.383-13.196-10.172-13.196-8.798 0-11.914 6.14-11.914 14.113v24.285h-9.439V28.202h9.44v7.331c1.282-4.032 6.506-7.698 11.913-8.065 8.89-.641 15.212 2.292 18.053 9.623 1.925-6.232 8.065-9.256 13.38-9.623 12.28-.916 19.612 5.04 19.612 19.887v26.118h-9.44V48.27c0-9.164-2.382-13.196-10.172-13.196-7.881 0-11.18 4.948-11.822 12.28zM370 50.929c0 13.471-9.714 23.46-22.727 23.46-4.4 0-9.99-1.833-13.013-4.307v26.76h-9.44v-68.64h9.44v3.574c3.574-2.75 8.614-4.4 13.013-4.4C360.286 27.377 370 37.458 370 50.93zm-9.53 0c0-9.256-6.324-15.763-14.114-15.763-5.132 0-9.622 2.291-12.096 7.24-1.192 2.475-1.925 5.407-1.925 8.523s.733 6.048 1.925 8.523c2.474 4.857 6.964 7.24 12.096 7.24 7.79 0 14.113-6.599 14.113-15.763z" />
+        </svg> -->
+      
+      </div>
+      <!-- <nav>
+        <ul role="list">
+          <li><a href="https://greensock.com/forums/topic/36177-scrollsmoother-data-speed-and-firstlast-folds/#comment-183450">about</a></li>
+        </ul>
+      </nav> -->
+    </header>
+
+    <section class="hero pad-l">
+        <div class="heading">
+          <div class="pin" style="z-index: 100;">
+            <h1 class="h1"><span class="clamp" >crezcamos
+               
+              </span><span class="yt clamp"> juntos <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 842.14 500">
+                  <path class="draw" d="M336.2,130.05C261.69,118,16.52,122,20.65,244.29c4.17,123,484.3,299.8,734.57,108.37,244-186.65-337.91-311-546.54-268.47" fill="none" stroke="#8486aa" stroke-miterlimit="10" stroke-width="8" />
+                </svg></span></h1>
+          </div>
+        </div>
+        <div class="images">
+          <div class="image-container">
+            <img data-speed="clamp(2.4)" src='./recursos/Frame 3.svg' width='400px' style="opacity: 0.8;" class="img"> 
+            <p class="image-text third-word">SOFTWARE A LA MEDIDA</p>
+          </div>
+          <div class="image-container">
+            <img data-speed="clamp(1.8)" src='./recursos/Frame 4.svg' width='400px' class="img" alt=''>
+            <p class="image-text third-word">SPORTE LEGAL</p>
+          </div>
+          <div class="image-container">
+            <img data-speed="clamp(2.2)" src='./recursos/Frame 5.svg' width='400px'class="img"  alt=''>
+            <p class="image-text third-word">MARKETING</p>
+          </div>
+          <div class="image-container">
+            <img data-speed="clamp(1.5)" src='./recursos/Frame 6.svg' width='400px' class="img" alt=''>
+            <p class="image-text third-word">INTELIGENCIA ARTIFICAL</p>
+          </div>
+        </div>
+    </section>
+    <section class="hero" style=" position: relative;display: flex;" >
+      
+      
+     
+      <section class="secondary-section-image ">
+        <img data-speed="0.8" src="./recursos/software/Group 4.png" class="grid-image" alt="" loading="lazy">
+        <img data-speed="0.9" src="./recursos/software/Screenshot 2025-05-10 011040.png" class="grid-image" alt="" loading="lazy">
+        <img data-speed="1" src="./recursos/software/Dashboard.svg" class="grid-image" alt=""loading="lazy">
+        <img data-speed="1.1" src="./recursos/software/image.png" class="grid-image" alt=""loading="lazy">
+        <img data-speed="0.9" src="./recursos/software/api.png" class="grid-image" alt=""loading="lazy">
+        <img data-speed="1.2" src="./recursos/software/osc login.png" class="grid-image" alt=""loading="lazy">
+        <img data-speed="0.8" src="./recursos/software/securityadvisor2.png" class="grid-image" alt=""loading="lazy">
+        <img data-speed="1" src="./recursos/software/securityaadvisor.png" class="grid-image" alt="" loading="lazy">
+       
+      </section>
+      
+      <section class="secondary-section-text">
+        <div class="texto-animado">
+          <h1 class="t-animado-titulo">Diseños e Identidad Visual</h1>
+          <p class="t-animado-parrafo">Creamos diseños únicos y atractivos que reflejan la esencia de tu marca. Nuestro equipo de diseñadores desarrolla identidades visuales que conectan con tu audiencia y destacan en el mercado digital.</p>
+        </div>
+    
+        <div class="texto-animado">
+          <h1 class="t-animado-titulo">Funcionalidad</h1>
+          <p class="t-animado-parrafo">Implementamos soluciones tecnológicas avanzadas como APIs personalizadas, pasarelas de pago seguras y dashboards interactivos que optimizan la experiencia del usuario y potencian tu negocio.</p>
+        </div>
+        <div class="texto-animado">
+          <h1 class="t-animado-titulo">Seguridad</h1>
+          <p class="t-animado-parrafo">Garantizamos la protección de tu sitio web y los datos de tus clientes con los más altos estándares de seguridad. Implementamos certificados SSL, verificación SOC2, protección contra ataques y respaldos automáticos para tu tranquilidad.</p>
+        </div>
+      </section>
+    </section>
+    
+
+    <section class="slides-section" style=" min-height: 100vh;">
+
+      <section class="slide" style=" background:linear-gradient(to bottom right, rgba(2, 40, 40, 0.8), rgba(2, 40, 40, 0.2));">
+    <div class="slide__outer">
+      <div class="slide__inner">
+        <div class="slide__content">
+          <div class="slide__container" style="text-align: center;">
+            <h1 class="slide__heading" >Sporte Legal</h1>
+            <div style="margin-bottom: 30px;">
+              <svg width="50" height="50" viewBox="0 0 24 24" style="fill: black;">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+              </svg>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <section class="slide" style="background-color: rgba(2, 40, 12, 0.581);">
+      <div class="slide__outer">
+        <div class="slide__inner">
+        <div class="slide__content">
+          <div class="slide__container">
+          <div class="container-2">
+
+            <h2 class="slide__heading">Registro Marcario</h2>
+            <figure class="slide__img-cont">
+              <img class="slide__img" src='./recursos/legal/Logo_SIC-02.png' alt='' loading="lazy" style="background-color: white;">
+            </figure>
+          </div>
+
+          </div>
+        </div>
+        </div>
+      </div>
+      </section>
+
+      <section class="slide" style="background-color: rgba(78, 56, 244, 0.581);">
+      <div class="slide__outer">
+        <div class="slide__inner">
+        <div class="slide__content">
+          <div class="slide__container">
+         <div class="container-2">
+            <h2 class="slide__heading">Contratos Comerciales</h2>
+            <h3>Elaboramos y revisamos contratos que protegen tus intereses comerciales, garantizando seguridad jurídica en todas tus operaciones empresariales</h3>
+            
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </section>
+
+      <section class="slide">
+      <div class="slide__outer">
+        <div class="slide__inner">
+        <div class="slide__content">
+          <div class="slide__container">
+           <div class="container-2">
+            <h2 class="slide__heading">Protección de Datos</h2>
+            <h3>Implementamos soluciones legales para el cumplimiento normativo en protección de datos personales, adaptando tu empresa a la legislación vigente</h3>
+            
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </section>
+      
+      <section class="slide" style=" background:linear-gradient(to bottom right, rgba(2, 40, 40, 0.8), rgba(2, 40, 40, 0.2));">
+    <div class="slide__outer">
+      <div class="slide__inner">
+        <div class="slide__content">
+          <div class="slide__container" style="text-align: center;">
+            <h1 class="slide__heading" >Marketing</h1>
+            <div style="margin-bottom: 30px;">
+              <svg width="50" height="50" viewBox="0 0 24 24" style="fill: black;">
+                <path d="M12 20l-1.41-1.41L16.17 13H4v-2h12.17l-5.58-5.59L12 4l8 8z" transform="rotate(90, 12, 12)"/>
+              </svg>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+     
+
+    </section>
+    <section class="tercera-parte">
+     <div class="pov">
+      <div class="redes" >
+          <img class="img-redes" src='./recursos/marketing/Facebook (1).png' alt='' loading="lazy" >
+          <img class="img-redes" src='./recursos/marketing/Instagram (1).png' alt='' loading="lazy" >
+          <img class="img-redes" src='./recursos/marketing/Tiktok.png' alt='' loading="lazy" >
+          <img class="img-redes" src='./recursos/marketing/Whatsapp.png' alt='' loading="lazy" >
+
+      </div>
+      <div class="tray">
+        <div class="die">
+          <div class="cube">
+            <div class="face" style="font-size:60px">PAUTA</div>
+            <div class="face" style="font-size:58px">VALOR</div>
+            <div class="face" style="font-size:55px">AGREGADO</div>      
+          </div>
+        </div>  
+        <!-- clones will go here -->
+      </div>
+</div>
+    </section>
+    <section class="cuarta-parte" style="min-height: 100vh; z-index: 100; width: 100%;">
+      <div class="contenedor-probando" style="height: 100vh; width: 100%; position: relative;">
+        <div class="objeto izquierda" style="background-color: rgba(244, 56, 56, 0.7); width: 200px; height: 200px; position: absolute; left: 50%; bottom: 50px; transform: translateX(-50%); text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.3rem;"> Asistencia Virtual </div>
+        <div class="objeto centro" style="background-color: rgba(56, 244, 56, 0.7); width: 200px; height: 200px; position: absolute; left: 50%; bottom: 50px; transform: translateX(-50%); text-align: center; display: flex; align-items: center;justify-content: center;padding: 0.3rem;">Análisis Predictivo </div>
+        <div class="objeto derecha" style="background-color: rgba(56, 56, 244, 0.7); width: 200px; height: 200px; position: absolute; left: 50%; bottom: 50px; transform: translateX(-50%); text-align: center; display: flex; align-items: center;justify-content: center;padding: 0.3rem;">Automatización Inteligente</div>
+        <h1 style="min-width: 150px; min-height: 150px; position: absolute; left: 50%; bottom:40%; text-align: center; transform: translateX(-50%);">
+          <span class="clamp">Inteligencia Artificial</span>
+          <span class="clamp"style="background-color: rgba(0, 102, 204, 0.1); border: 2px solid #0066cc; border-radius: 5px; padding: 2px 8px; color: #0066cc; font-weight: bold;">Ofrecemos</span>
+
+        </h1>
+         <div style="position:absolute; bottom: -5vh;  display: flex; width: 100%; justify-content: center; flex-direction: column; align-items: center; padding: 20px; background: radial-gradient(circle at center bottom, #e0f7fa, #ffffff);">
+            <h1 style="background: linear-gradient(to right, #0066cc, #00cccc); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 10px;">Contáctanos</h1>
+            <a class="quepedo" href="https://wa.me/573044805568" style="text-decoration: none; background: linear-gradient(to right, #0066cc, #00cccc); -webkit-background-clip: text; background-clip: text; color: transparent;">+57 304 480 5568</a>
+          </div>
+      </div>
+  
+    </section>
+   
+  </div>
+</div>
+
+
+
+ <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+ <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js?v=3.12"></script>
+<!-- ScrollSmoother requires ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js?v=3.12"></script>
+
+<!-- <script src='https://assets.codepen.io/16327/ScrollTrigger.min.js?v=3.12'></script>
+<script src='https://assets.codepen.io/16327/ScrollSmoother.min.js?v=3.12'></script>
+<script src='https://assets.codepen.io/16327/Observer.min.js'></script>
+<script src='https://assets.codepen.io/16327/DrawSVGPlugin3.min.js'></script> -->
+
+<script type="module" src="./script.js"></script>
+
+</body>
+</html>
