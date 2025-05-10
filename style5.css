@@ -2,7 +2,7 @@
     font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
-  background:#000;
+  background: linear-gradient(90deg, #FF8008 0%, #FFC837 100%);
   overflow: hidden;
  
 }
